@@ -25,6 +25,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 	@Autowired
 	UserDetailsService userdetailservice;
 	
+	@Autowired
+	private JwtFilter jwtfilter;
+	
 	AuthenticationProvider authenticationProvider()
 	{
 		DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
