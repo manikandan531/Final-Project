@@ -46,7 +46,7 @@ public class Controller
 	public Customer placeorder(@RequestBody OrderRequest request)
 	{
 		Customer customer=new Customer();
-		customer.setName(request.getName());
+		customer.setUsername(request.getUsername());
 		customer.setEmail(request.getEmail());
 		customer.setPassword(request.getPassword());
 		customer.setPhone(request.getPhone());
@@ -68,9 +68,9 @@ public class Controller
 	  { 
 		  Customer updatedvalue=customerRepo.findById(id).get();
 	  
-	  if(Objects.nonNull(request.getName()) &&!"".equalsIgnoreCase(request.getName()))
+	  if(Objects.nonNull(request.getUsername()) &&!"".equalsIgnoreCase(request.getUsername()))
 	  {
-		  updatedvalue.setName(request.getName()); 
+		  updatedvalue.setUsername(request.getUsername()); 
 	  }
 	  
 	  if(Objects.nonNull(request.getEmail()) &&!"".equalsIgnoreCase(request.getEmail()))
@@ -87,7 +87,8 @@ public class Controller
 	  {
 		  updatedvalue.setPhone(request.getPhone()); 
 	  } 
-	  return customerRepo.save(updatedvalue); }
+	  return customerRepo.save(updatedvalue);
+	  }
 	 
 	 
 	
@@ -109,14 +110,14 @@ public class Controller
 	    {
 	    	try
 	    	{
-	    	 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getName(),jwtRequest.getPassword()));
+	    	 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(jwtRequest.getUsername(),jwtRequest.getPassword()));
 	    	}
 	    	catch (Exception e) 
 	    	{
 				throw new Exception("invalid username");
 			}
 	    	 
-	    	UserDetails userDetails = customUserDetailService.loadUserByUsername(jwtRequest.getName());
+	    	UserDetails userDetails = customUserDetailService.loadUserByUsername(jwtRequest.getUsername());
 	    	
 	    	String token = jwtUtility.generateToken(userDetails);
 	    	
@@ -124,3 +125,4 @@ public class Controller
 	    	
 	    }
 }
+
