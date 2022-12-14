@@ -17,7 +17,7 @@ public class OrderRequest
 	
 	private List<Product> product;
 
-	private String name;
+	private String username;
 	private String email;
 	private String password;
 	private String phone;
