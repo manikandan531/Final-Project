@@ -9,6 +9,6 @@ import com.example.demo.api.entity.Customer;
 public interface CustomerRepo  extends JpaRepository<Customer,Integer>
 {
 
-	Customer findByName(String name);
+	Customer findByUsername(String username);
 
 }
