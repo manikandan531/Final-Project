@@ -44,8 +44,8 @@ public abstract class CustomerServiceImple  implements CustomerService
 	{
 		
 		        Customer updatedvalue=cusrepo.findById(id).get();
-		        System.out.println("name"+customer.getUsername());
-		        System.out.println("emil"+customer.getEmail());
+		        System.out.println("username"+customer.getUsername());
+		        System.out.println("email"+customer.getEmail());
 		        System.out.println("password"+customer.getPassword());
 		        System.out.println("phone"+customer.getPhone());
 		        
