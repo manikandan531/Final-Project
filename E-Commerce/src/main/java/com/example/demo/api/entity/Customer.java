@@ -28,8 +28,8 @@ public class Customer
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	@Column(name="id")
 	private Integer id;
-	@Column(name="name")
-	private String name;
+	@Column(name="username")
+	private String username;
 	@Column(name="email")
 	private String email;
 	@Column(name="password")
