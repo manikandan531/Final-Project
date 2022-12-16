@@ -1,5 +1,4 @@
 package com.example.demo.api.config;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +21,9 @@ import com.example.demo.api.filter.JwtFilter;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 {
+	
+	private static final String url="/AddtoCart";
+	
 	@Autowired
 	UserDetailsService userdetailservice;
 	
@@ -56,7 +58,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		.disable();
 		 http
 		.authorizeHttpRequests()
-		.antMatchers("/authenticate")
+		.antMatchers("/authenticate,/AddtoCart")
 		.permitAll()
 		.anyRequest()
 		.authenticated()
