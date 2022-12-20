@@ -99,7 +99,7 @@ public class Controller
 	 }
 	 
 
-	    @GetMapping("/")
+	    @GetMapping("/home")
 	    public String home() 
 	    {
 	        return "Welcome to hubino technologies!!";
