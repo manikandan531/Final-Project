@@ -56,10 +56,10 @@ public class Controller
 		return customer;
 	}
 	
-	@GetMapping("/ShowAll")
-	public List<Customer> showAllProducts()
+	@GetMapping("/showCustomerById/{id}")
+	public Customer showCustomerById(@PathVariable ("id")  Integer id)
 	{
-		return customerRepo.findAll();
+		return customerRepo.findById(id).get();
 	}
 	
 	
@@ -99,8 +99,8 @@ public class Controller
 	 }
 	 
 
-	    @GetMapping("/home")
-	    public String home() 
+	    @GetMapping("/homepage")
+	    public String homepage() 
 	    {
 	        return "Welcome to hubino technologies!!";
 	    }
