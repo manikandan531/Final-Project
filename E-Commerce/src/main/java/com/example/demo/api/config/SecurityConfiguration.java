@@ -21,8 +21,7 @@ import com.example.demo.api.filter.JwtFilter;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 {
-	
-	private static final String[] url={"/AddtoCart","/ShowAll"};
+	private static final String[] url={"/AddtoCart","/homepage","/authenticate","/","/pay"};
 	
 	@Autowired
 	UserDetailsService userdetailservice;
@@ -58,7 +57,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		.disable();
 		 http
 		.authorizeHttpRequests()
-		.antMatchers("/authenticate","/ShowAll")
+		.antMatchers(url)
 		.permitAll()
 		.anyRequest()
 		.authenticated()
