@@ -14,14 +14,12 @@ import com.paypal.base.rest.PayPalRESTException;
 @Configuration
 public class PaypalConfig 
 {
-
 	@Value("${paypal.client.id}")
-	private String clientId;
+	private String clientId="AdiIgyxmIWFxOUKKcIyVVtB5Hd9FWZVls6XnJ5PyqfCYldfSLj1K-4FT9rYDKtFlHBPhjd2TSvDTlATU";
 	@Value("${paypal.client.secret}")
-	private String clientSecret;
+	private String clientSecret="EDD88AKg0Nb490Gv32wHYg-NQP5kpM9y4zV1JgF_ltHojz3jQsdd2o35GESWq_K2frcMNbpT7rxsESHX";
 	@Value("${paypal.mode}")
-	private String mode;
-
+	private String mode="sandbox";
 
 	@Bean
 	public Map<String,String> paypalSdkConfig()
